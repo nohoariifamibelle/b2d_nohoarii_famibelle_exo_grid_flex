@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr auto;
+}
+
+.header {
+    background: yellow;
+    text-align: center;
+    grid: 1;
+}
+
+.menu {
+    background: orange;
+    text-align: center;
+    grid-row: 2 / -1;
+    grid-column: 1 / 2;
+}
+
+.contenu-text {
+    display: grid;
+    background: green;
+    text-align: center;
+    grid-row: 2 / 3;
+}
+
+.text {
+    background: white;
+    text-align: center;
+}
+
+.footer {
+    background: blue;
+    text-align: center;
+    grid-row: 4 / 5;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    body {
+        display: grid;
+        background: lightgrey;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .contenu-text {
+        display: grid;
+        place-items: center center;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 870px) {}
+
+@media screen and (max-width: 1920px) {}
